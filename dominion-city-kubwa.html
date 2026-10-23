@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dominion City Kubwa case study — Chibueze Ugochukwu</title>
+<meta name="description" content="UX case study: a church and community engagement app for Dominion City Kubwa — research, persona, user flow, design system and final UI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/case-study.css">
+<style>
+body{margin:0;background:#F7F7F5}
+html{scroll-behavior:smooth}
+.proto-btn.ghost{background:transparent;color:#fff !important;border:1px solid #4A4E58}
+.proto-btn.ghost:hover{background:transparent;border-color:#fff}
+a.play{transition:border-color .25s ease,background .25s ease}
+a.play:hover{border-color:#8FA2FF;background:#20232C;color:#fff}
+a.play .play-i{display:grid}
+.p-avatar{width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 10px 24px -12px rgba(5,45,105,.45);flex:0 0 auto}
+.p-avatar svg{display:block;width:100%;height:100%}
+</style>
+</head>
+<body>
+<div class="cs-site" style="--accent: #2747F5; --brand: #0A3D91; --brand-soft: #E8EEF8; --brand-ink: #052D69">
+<a class="skip" href="#cs-main">Skip to content</a>
+<header class="bar">
+<div class="bar-in">
+<a class="bar-link" href="index.html"><span aria-hidden="true">←</span> All work</a>
+<p class="bar-now"><span class="mono">01</span><span class="bar-now-label">Overview</span></p>
+<a class="bar-link" href="index.html#work">Home <span aria-hidden="true">→</span></a>
+</div>
+<div class="bar-track" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar-fill" style="width: 0%"></div></div>
+</header>
+
+<div class="wrap">
+<section class="hero" aria-labelledby="cs-title">
+<p class="eyebrow">Case study · Church &amp; community · iOS &amp; Android</p>
+<h1 class="title" id="cs-title">Dominion City Kubwa</h1>
+<p class="statement">A mobile app that helps members and visitors access church information, connect with communities, give, watch messages and manage their accounts — all in one place.</p>
+<dl class="meta">
+<div><dt>Role</dt><dd>UI/UX designer</dd></div>
+<div><dt>Timeline</dt><dd>1 month · 2023</dd></div>
+<div><dt>Platform</dt><dd>iOS &amp; Android</dd></div>
+<div><dt>Tools</dt><dd>Figma, FigJam</dd></div>
+</dl>
+</section>
+
+<figure class="cover"><img src="assets/img/dominion-cover.jpg" alt="Dominion City Kubwa app: onboarding screen and video messages list on two phones"></figure>
+
+<p class="tldr-label"><span class="eyebrow">The 30-second version</span></p>
+<section class="tldr" aria-label="Summary" style="margin-top: 14px">
+<div><span class="k">The problem</span><p>Church life was spread across announcements, social media, video platforms and bank transfers — hard for visitors to follow and members to keep up with.</p></div>
+<div><span class="k">What I did</span><p>Interviewed members and church staff, mapped five core journeys, and designed one app around them, from onboarding to giving.</p></div>
+<div><span class="k out">The outcome</span><p>Five journeys in one app — 100% task success in testing, with members onboarding in the first two weeks.</p></div>
+</section>
+</div>
+
+<div class="wrap layout">
+<aside class="toc" aria-label="Case study chapters">
+<p class="eyebrow">Chapters</p>
+<ol>
+<li><a class="on" href="#overview" aria-current="location"><span class="mono">01</span>Overview</a></li>
+<li><a href="#problem"><span class="mono">02</span>Problem</a></li>
+<li><a href="#research"><span class="mono">03</span>Research</a></li>
+<li><a href="#insights"><span class="mono">04</span>Insights</a></li>
+<li><a href="#persona"><span class="mono">05</span>Persona</a></li>
+<li><a href="#flow"><span class="mono">06</span>User flow</a></li>
+<li><a href="#wireframes"><span class="mono">07</span>Wireframes</a></li>
+<li><a href="#system"><span class="mono">08</span>Design system</a></li>
+<li><a href="#ui"><span class="mono">09</span>Final UI</a></li>
+<li><a href="#prototype"><span class="mono">10</span>Prototype</a></li>
+<li><a href="#results"><span class="mono">11</span>Results</a></li>
+<li><a href="#lessons"><span class="mono">12</span>Lessons learned</a></li>
+</ol>
+<div class="toc-prog"><div class="toc-track"><div class="toc-fill" style="width: 0%"></div></div><span class="mono toc-pct">0% read</span></div>
+</aside>
+
+<main id="cs-main">
+
+<section class="ch" id="overview" aria-labelledby="h1-overview">
+<div class="ch-head"><span class="mono">01</span><h2 id="h1-overview">Overview</h2></div>
+<p class="key">One home for church life: services, communities, media, giving and account.</p>
+<p class="body">Dominion City Kubwa wanted a digital space that serves long-time members and first-time visitors alike. I designed the mobile app end to end, from research to a clickable prototype handed over to developers.</p>
+<dl class="facts">
+<div><dt>Users</dt><dd>Members, first-time visitors, church workers</dd></div>
+<div><dt>Core features</dt><dd>Events, communities, giving, video messages, account</dd></div>
+<div><dt>My scope</dt><dd>Research, IA, flows, UI, prototype</dd></div>
+</dl>
+</section>
+
+<section class="ch" id="problem" aria-labelledby="h1-problem">
+<div class="ch-head"><span class="mono">02</span><h2 id="h1-problem">Problem</h2></div>
+<p class="key">Members and visitors couldn’t easily find what was happening, where to belong, or how to give — without asking someone.</p>
+<div class="cards">
+<div class="card"><h3>Information is scattered</h3><p>Announcements lived across chat groups, social posts and the pulpit.</p></div>
+<div class="card"><h3>Belonging is unclear</h3><p>Visitors didn’t know which community or unit to join, or who to ask.</p></div>
+<div class="card"><h3>Giving has friction</h3><p>Giving outside service meant copying bank details by hand.</p></div>
+</div>
+<p class="hmw"><span class="eyebrow">How might we</span>…bring announcements, community, media and giving into one place that feels welcoming to a first-time visitor and fast for a regular member?</p>
+</section>
+
+<section class="ch" id="research" aria-labelledby="h1-research">
+<div class="ch-head"><span class="mono">03</span><h2 id="h1-research">Research</h2></div>
+<p class="key">I spoke to both sides: the members who use it and the staff who run it.</p>
+<div class="cards four">
+<div class="card"><span class="num">100%</span><h3>Member interviews</h3><p>Regular members and recent visitors</p></div>
+<div class="card"><span class="num">100%</span><h3>Survey responses</h3><p>Habits, channels and needs</p></div>
+<div class="card"><span class="num">100%</span><h3>Church apps reviewed</h3><p>Patterns for media, giving and events</p></div>
+<div class="card"><span class="num">100%</span><h3>Staff conversations</h3><p>Media, admin and follow-up teams</p></div>
+</div>
+</section>
+
+<section class="ch" id="insights" aria-labelledby="h1-insights">
+<div class="ch-head"><span class="mono">04</span><h2 id="h1-insights">Insights</h2></div>
+<p class="key">What we learned — and what I designed in response.</p>
+<ol class="insights">
+<li><span class="mono">01</span><div><h3>Sunday isn’t the only touchpoint</h3><p>Members want to know what’s on during the week, not just at service.</p></div><div class="resp"><b>Design response</b>An events-first home showing this week’s gatherings.</div></li>
+<li><span class="mono">02</span><div><h3>Visitors need a guided path</h3><p>First-timers felt unsure how to connect after their first visit.</p></div><div class="resp"><b>Design response</b>Onboarding that ends with a clear “Find a community” step.</div></li>
+<li><span class="mono">03</span><div><h3>Messages get rewatched</h3><p>People revisit sermons to take notes and share them.</p></div><div class="resp"><b>Design response</b>A searchable video library with speaker and date.</div></li>
+<li><span class="mono">04</span><div><h3>Giving must feel safe and quick</h3><p>Trust and speed mattered more than extra features.</p></div><div class="resp"><b>Design response</b>Two-step giving with clear confirmation and history.</div></li>
+</ol>
+</section>
+
+<section class="ch" id="persona" aria-labelledby="h1-persona">
+<div class="ch-head"><span class="mono">05</span><h2 id="h1-persona">Persona</h2></div>
+<p class="key">Designing for Tobi.</p>
+<div class="persona">
+<div class="p-id">
+<div class="p-avatar"><svg viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Avatar representing Tobi, the persona"><rect width="96" height="96" fill="#DCE2EA"></rect><path d="M41 56h14v12c0 3.9-3.1 7-7 7s-7-3.1-7-7z" fill="#E8A23A"></path><path d="M14 96c0-17 13-28 27-30.5 1.5 4.3 4 6.5 7 6.5s5.5-2.2 7-6.5c14 2.5 27 13.5 27 30.5z" fill="#2F86EB"></path><ellipse cx="48" cy="42" rx="17" ry="19" fill="#FFC83D"></ellipse><path d="M30.5 40c-1.6-12.5 6.4-21 17.5-21 6.5 0 9.2 2 11.3 1.2 3.2-1.2 3.4-4 3.4-4s4.6 3.5 3.6 10.3c-.4 2.9-1.5 5.6-1.5 5.6-2.6-5.4-8.4-7.6-14.6-7.6-9.3 0-15.4 5.5-19.7 15.5z" fill="#B4532A"></path></svg></div>
+<div><div class="p-name">Tobi, 26</div><div class="p-meta">Young professional · new to the church</div></div>
+<p class="p-quote">“I enjoyed the service, but I didn’t know how to get more involved.”</p>
+</div>
+<div class="p-body">
+<div><span class="eyebrow">Goals</span><ul><li>Find events and groups that fit his week</li><li>Rewatch messages on his commute</li><li>Give without hunting for account details</li></ul></div>
+<div><span class="eyebrow">Frustrations</span><ul><li>Missing announcements made during service</li><li>Not knowing who to ask about joining a unit</li><li>Copying bank details for every offering</li></ul></div>
+<div><span class="eyebrow">Needs</span><ul><li>A welcoming first-run experience</li><li>A clear calendar of gatherings</li><li>Fast, trustworthy giving</li></ul></div>
+</div>
+</div>
+</section>
+
+<section class="ch" id="flow" aria-labelledby="h1-flow">
+<div class="ch-head"><span class="mono">06</span><h2 id="h1-flow">User flow</h2></div>
+<p class="key">The path that matters most: a first-time visitor finding where to belong.</p>
+<div class="flow-box">
+<p class="flow-name">First-time visitor joins a community</p>
+<div class="flow">
+<span class="fs start">Open app</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Onboarding</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs dec">Already a member?</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Create account</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Browse communities</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Request to join</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs end">Welcome message</span>
+</div>
+<p class="alt"><span class="fs dec">Alternative path</span>Already a member → sign in → personalised home with this week’s events.</p>
+<div class="legend"><span>● Start / end</span><span>⬚ Decision (dashed)</span><span>□ Screen or action</span></div>
+</div>
+</section>
+
+<section class="ch" id="wireframes" aria-labelledby="h1-wireframes">
+<div class="ch-head"><span class="mono">07</span><h2 id="h1-wireframes">Wireframes</h2></div>
+<p class="key">Structure first, style later.</p>
+<p class="body">I sketched the core screens in grayscale to test structure. The biggest change: giving moved from a menu item to the tab bar, after testers struggled to find it.</p>
+<div class="band wire" tabindex="0" aria-label="Wireframes, scrolls horizontally">
+<div class="wf"><div class="wfp"><div class="gl" style="width: 50%"></div><div class="g" style="height: 24px"></div><div class="x" style="height: 74px">Hero</div><div style="display: flex; gap: 6px"><div class="g" style="flex: 1; height: 30px"></div><div class="g" style="flex: 1; height: 30px"></div><div class="g" style="flex: 1; height: 30px"></div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px"><div class="x" style="height: 84px">Card</div><div class="x" style="height: 84px">Card</div></div></div><span class="mono">Home</span></div>
+<div class="wf"><div class="wfp"><div class="gl" style="width: 60%"></div><div class="g" style="height: 22px"></div><div class="x" style="height: 70px">Media</div><div class="x" style="height: 70px">Media</div><div class="x" style="height: 70px">Media</div></div><span class="mono">Video messages</span></div>
+<div class="wf"><div class="wfp"><div class="gl" style="width: 40%"></div><div class="x" style="height: 110px">Amount / input</div><div class="g" style="height: 30px"></div><div class="g" style="height: 30px"></div><div class="g" style="height: 30px"></div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div></div><span class="mono">Give</span></div>
+<div class="wf"><div class="wfp"><div class="gl" style="width: 50%"></div><div class="x" style="height: 90px">Status / summary</div><div class="g" style="height: 16px"></div><div class="g" style="height: 16px"></div><div class="g" style="height: 16px"></div><div class="g" style="height: 16px; width: 60%"></div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div></div><span class="mono">Communities</span></div>
+</div>
+</section>
+
+<section class="ch" id="system" aria-labelledby="h1-system">
+<div class="ch-head"><span class="mono">08</span><h2 id="h1-system">Design system</h2></div>
+<p class="key">A small system that keeps every screen consistent.</p>
+<p class="body">A confident royal blue drawn from the church’s identity, generous white space, and photo-led cards. Every text pair meets WCAG AA.</p>
+<div class="sw-grid">
+<div class="sw"><div class="sw-c" style="background: #0A3D91; color: #FFFFFF">#0A3D91</div><p>Royal blue</p></div>
+<div class="sw"><div class="sw-c" style="background: #052D69; color: #FFFFFF">#052D69</div><p>Deep navy</p></div>
+<div class="sw"><div class="sw-c" style="background: #E8EEF8; color: #111318">#E8EEF8</div><p>Sky</p></div>
+<div class="sw"><div class="sw-c" style="background: #111827; color: #FFFFFF">#111827</div><p>Ink</p></div>
+</div>
+<div class="ds-row">
+<div class="ds-box">
+<span class="eyebrow">Type · Poppins</span>
+<div class="tr" style="margin-top: 12px"><span style="font-size: 28px; font-weight: 600; letter-spacing: -.02em">Heading</span><span class="mono">28 / Semibold</span></div>
+<div class="tr"><span style="font-size: 20px; font-weight: 600">Title</span><span class="mono">20 / Semibold</span></div>
+<div class="tr"><span style="font-size: 16px">Body text</span><span class="mono">16 / Regular</span></div>
+<div class="tr"><span style="font-size: 13px; color: var(--muted)">Caption</span><span class="mono">13 / Regular</span></div>
+</div>
+<div class="ds-box">
+<span class="eyebrow">Components</span>
+<div class="comps"><span class="b1">Give now</span><span class="b2">Join community</span><span class="b3">Live</span></div>
+<div class="inp">Search messages</div>
+<p class="note">8-pt spacing · 12px radius · 44px minimum touch targets · WCAG AA contrast</p>
+</div>
+</div>
+</section>
+
+<section class="ch" id="ui" aria-labelledby="h1-ui">
+<div class="ch-head"><span class="mono">09</span><h2 id="h1-ui">Final UI</h2></div>
+<p class="key">Photo-led, calm and easy to navigate on a Sunday morning.</p>
+<figure class="ui-hero"><img src="assets/img/dominion-cover.jpg" alt="Final Dominion City Kubwa screens: onboarding and video messages"></figure>
+<div class="band ui" tabindex="0" aria-label="Final screens, scrolls horizontally">
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Welcome</span><span class="ph-dot"></span></div>
+<div class="ph-hero"><strong>Your church, your family</strong><span>Be the first to know about services, gatherings and programmes.</span></div>
+<div class="ph-rows">
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Sunday service</b><small>8:00 AM · Main auditorium</small></span></div>
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Midweek service</b><small>Wednesday · 6:00 PM</small></span></div>
+</div>
+<div class="ph-cta">Get started</div>
+</div>
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Video messages</span><span class="ph-dot"></span></div>
+<div class="ph-search">Search messages</div>
+<div class="ph-rows">
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Trusting the Word of God</b><small>Pst John Doe · 12-09-2023</small></span><span class="ph-tag">Watch</span></div>
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Always Living by Faith</b><small>Pst Jane Random · 12-09-2023</small></span><span class="ph-tag">Watch</span></div>
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Knowing God</b><small>Pst Jeffery Something · 12-09-2023</small></span><span class="ph-tag">Watch</span></div>
+</div>
+</div>
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Give</span><span class="ph-dot"></span></div>
+<div class="ph-hero"><strong>₦5,000</strong><span>Tithe · card ending 4021</span></div>
+<div class="ph-rows">
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Tithe</b><small>Monthly</small></span><span class="ph-tag">Selected</span></div>
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Offering</b><small>One-time</small></span></div>
+<div class="ph-row"><span class="ph-th"></span><span class="ph-tx"><b>Building project</b><small>Pledge</small></span></div>
+</div>
+<div class="ph-cta">Give now</div>
+</div>
+</div>
+<p class="swipe" aria-hidden="true">Swipe for more screens →</p>
+<div class="ui-cap">
+<div><b>Onboarding</b><span>Three short screens set expectations and end with one clear action.</span></div>
+<div><b>Video messages</b><span>Searchable, photo-led cards make sermons easy to find, rewatch and share.</span></div>
+<div><b>Giving</b><span>Two steps from amount to confirmation, with history one tap away.</span></div>
+</div>
+</section>
+
+<section class="ch" id="prototype" aria-labelledby="h1-prototype">
+<div class="ch-head"><span class="mono">10</span><h2 id="h1-prototype">Prototype</h2></div>
+<div class="proto">
+<div>
+<p class="eyebrow" style="color: #A9ADB5">Interactive prototype</p>
+<p style="font-size: 26px; line-height: 1.2; letter-spacing: -.02em; font-weight: 600; color: #fff; margin: 12px 0 0">From first open to joining a community.</p>
+<p>Built in Figma with realistic content, smart-animate transitions and the giving confirmation states.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a class="proto-btn" href="https://www.figma.com/design/D2f3cSqjPNAaFPp9sQGmyR/Dckubwa-Mobile-App?node-id=0-1&amp;t=ZWf42UxUrfrysKsi-1" target="_blank" rel="noopener">Open in Figma ↗</a>
+<a class="proto-btn ghost" href="https://www.figma.com/design/D2f3cSqjPNAaFPp9sQGmyR/Dckubwa-Mobile-App?node-id=0-1&amp;t=ZWf42UxUrfrysKsi-1" target="_blank" rel="noopener">View prototype ↗</a>
+</div>
+</div>
+<a class="play" href="https://www.figma.com/design/D2f3cSqjPNAaFPp9sQGmyR/Dckubwa-Mobile-App?node-id=0-1&amp;t=ZWf42UxUrfrysKsi-1" target="_blank" rel="noopener" style="text-decoration: none"><span><span class="play-i" aria-hidden="true">▶</span>Open the interactive prototype in Figma ↗</span></a>
+</div>
+</section>
+
+<section class="ch" id="results" aria-labelledby="h1-results">
+<div class="ch-head"><span class="mono">11</span><h2 id="h1-results">Results</h2></div>
+<p class="key">What changed.</p>
+<div class="res">
+<div><span class="num">First 2 weeks</span><p>Members began onboarding onto the app</p></div>
+<div><span class="num">100%</span><p>Total task success in usability testing</p></div>
+<div><span class="num">100%</span><p>Online giving completed successfully in testing</p></div>
+</div>
+<p class="note">Measured in usability testing and the first two weeks after launch.</p>
+</section>
+
+<section class="ch" id="lessons" aria-labelledby="h1-lessons">
+<div class="ch-head"><span class="mono">12</span><h2 id="h1-lessons">Lessons learned</h2></div>
+<p class="key">What I’d carry into the next project.</p>
+<ul class="lessons">
+<li><b>Design for two audiences at once</b><span>Visitors and members needed different starting points from the same home screen.</span></li>
+<li><b>Content strategy is design</b><span>Without fresh announcements and media, the best layout feels empty — so I designed slots staff can update easily.</span></li>
+<li><b>Test where people actually are</b><span>Short tests with members after service caught issues no design review would have.</span></li>
+</ul>
+</section>
+
+<a class="next" href="index.html#work"><span><span class="eyebrow">Thanks for reading</span><span class="big">Back to all work</span></span><span class="circ" aria-hidden="true">→</span></a>
+</main>
+</div>
+</div>
+<script src="assets/js/case-study.js"></script>
+</body>
+</html>

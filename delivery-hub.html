@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delivery Hub case study — Chibueze Ugochukwu</title>
+<meta name="description" content="UX case study: a simple, friendly and secure onboarding experience for the Delivery Hub mobile delivery app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/case-study.css">
+<style>
+body{margin:0;background:#F7F7F5}
+html{scroll-behavior:smooth}
+.dh-cover{margin:16px 0 0;border-radius:28px;overflow:hidden;background:#0E8C8C}
+.dh-cover img{display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;object-position:50% 9%}
+@media(max-width:700px){.dh-cover{border-radius:18px}.dh-cover img{aspect-ratio:4/3;object-position:22% 14%}}
+.board{margin:28px auto 0;max-width:760px;border-radius:24px;overflow:hidden;background:#0E8C8C;box-shadow:0 40px 80px -48px rgba(17,19,24,.5)}
+.board img{display:block;width:100%;height:auto}
+.board figcaption{background:var(--surface);padding:14px 18px;font-size:14px;color:var(--muted)}
+@media(max-width:600px){.board{border-radius:16px}}
+.ph-fields{display:flex;flex-direction:column;gap:8px}
+.ph-cta2{background:#fff;color:var(--brand);border:1.5px solid var(--brand);text-align:center;border-radius:999px;padding:9px;font-weight:500}
+.ph-ctas{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+.ph-ctas .ph-cta{margin-top:0}
+.ph-foot{text-align:center;font-size:11px;color:var(--muted)}
+.ph-foot b{color:var(--brand);font-weight:600}
+.ph-st{width:18px;height:18px;border-radius:50%;border:1.5px solid #B7C3C3;flex:0 0 auto;margin:0 10px 0 4px}
+.ph-st.done{background:var(--brand);border-color:var(--brand)}
+.ph-st.now{border:5px solid var(--brand)}
+.ph-hero.big{align-items:center;text-align:center;padding:22px 14px}
+.ph-check{width:56px;height:56px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;margin-bottom:6px}
+.ui-cap.five{grid-template-columns:minmax(0,1fr)}
+@media(min-width:700px){.ui-cap.five{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1180px){.ui-cap.five{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.concept{display:inline-flex;align-items:center;gap:10px;margin:20px 0 0;padding:12px 16px;border-radius:12px;background:var(--brand-soft);color:var(--brand-ink);font-size:15px}
+.p-avatar{width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 10px 24px -12px rgba(30,27,142,.4);flex:0 0 auto}
+.p-avatar svg{display:block;width:100%;height:100%}
+.res .num{line-height:1.1}
+.res b.mt{display:block;margin-top:10px;font-size:16px;font-weight:600;color:var(--ink)}
+.res .tgt{display:block;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font:500 12px 'Geist Mono',monospace;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.proto-btn.ghost{background:transparent;color:#fff !important;border:1px solid #4A4E58}
+.proto-btn.ghost:hover{background:transparent;border-color:#fff}
+a.play{transition:border-color .25s ease,background .25s ease;text-decoration:none}
+a.play:hover{border-color:#8FA2FF;background:#20232C;color:#fff}
+.play{display:grid}
+.play-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px}
+.play-steps span{font:500 11px 'Geist Mono',monospace;padding:6px 9px;border-radius:999px;background:#2A2D35;color:#C3C6CC}
+.proto-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 24px}
+.proto-meta div{border-top:1px solid #2E323C;padding-top:10px}
+.proto-meta dt{font:500 11px 'Geist Mono',monospace;letter-spacing:.07em;text-transform:uppercase;color:#A9ADB5}
+.proto-meta dd{margin:4px 0 0;color:#fff;font-size:15px}
+</style>
+</head>
+<body>
+<div class="cs-site" style="--accent: #0B7A7B; --brand: #0B7A7B; --brand-soft: #E4F3F2; --brand-ink: #1E1B8E">
+<a class="skip" href="#cs-main">Skip to content</a>
+<header class="bar">
+<div class="bar-in">
+<a class="bar-link" href="index.html#work"><span aria-hidden="true">←</span> All work</a>
+<p class="bar-now"><span class="mono">01</span><span class="bar-now-label">Overview</span></p>
+<a class="bar-link" href="index.html">Home <span aria-hidden="true">→</span></a>
+</div>
+<div class="bar-track" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar-fill" style="width: 0%"></div></div>
+</header>
+
+<div class="wrap">
+<section class="hero" aria-labelledby="cs-title">
+<p class="eyebrow">Case study · Delivery &amp; logistics · iOS &amp; Android</p>
+<h1 class="title" id="cs-title">Delivery Hub</h1>
+<p class="statement">A simple, friendly and secure onboarding experience for a delivery app that connects people with reliable couriers and fast delivery services.</p>
+<dl class="meta">
+<div><dt>Role</dt><dd>UI/UX designer</dd></div>
+<div><dt>Timeline</dt><dd>[Timeline]</dd></div>
+<div><dt>Platform</dt><dd>iOS &amp; Android</dd></div>
+<div><dt>Tools</dt><dd>Figma, FigJam</dd></div>
+</dl>
+</section>
+
+<figure class="dh-cover"><img src="assets/img/delivery-hub-board.webp" alt="Delivery Hub welcome screen on a phone beside the case study title"></figure>
+
+<p class="tldr-label"><span class="eyebrow">The 30-second version</span></p>
+<section class="tldr" aria-label="Summary" style="margin-top: 14px">
+<div><span class="k">The problem</span><p>New users need a clear, reassuring way to begin using a delivery service — from first open to their first package.</p></div>
+<div><span class="k">What I did</span><p>Mapped the first-time user journey and designed five core screens around it: welcome, sign up, delivery details, live tracking and confirmation.</p></div>
+<div><span class="k out">The outcome</span><p>One clear path from welcome to delivery — a concept with defined success measures, to be validated through user testing.</p></div>
+</section>
+</div>
+
+<div class="wrap layout">
+<aside class="toc" aria-label="Case study chapters">
+<p class="eyebrow">Chapters</p>
+<ol>
+<li><a class="on" href="#overview" aria-current="location"><span class="mono">01</span>Overview</a></li>
+<li><a href="#problem"><span class="mono">02</span>Problem</a></li>
+<li><a href="#research"><span class="mono">03</span>Research</a></li>
+<li><a href="#insights"><span class="mono">04</span>Insights</a></li>
+<li><a href="#persona"><span class="mono">05</span>Persona</a></li>
+<li><a href="#flow"><span class="mono">06</span>User flow</a></li>
+<li><a href="#wireframes"><span class="mono">07</span>Wireframes</a></li>
+<li><a href="#system"><span class="mono">08</span>Design system</a></li>
+<li><a href="#ui"><span class="mono">09</span>Final UI</a></li>
+<li><a href="#prototype"><span class="mono">10</span>Prototype</a></li>
+<li><a href="#results"><span class="mono">11</span>Results</a></li>
+<li><a href="#lessons"><span class="mono">12</span>Lessons learned</a></li>
+</ol>
+<div class="toc-prog"><div class="toc-track"><div class="toc-fill" style="width: 0%"></div></div><span class="mono toc-pct">0% read</span></div>
+</aside>
+
+<main id="cs-main">
+
+<section class="ch" id="overview" aria-labelledby="h1-overview">
+<div class="ch-head"><span class="mono">01</span><h2 id="h1-overview">Overview</h2></div>
+<p class="key">Onboarding for a delivery app: fast, safe, reliable.</p>
+<p class="body">Delivery Hub connects people with couriers and fast delivery services. I designed the first-run experience end to end — the moment a new user decides whether to trust the app with a package — from flow to high-fidelity screens and a clickable prototype.</p>
+<dl class="facts">
+<div><dt>Users</dt><dd>First-time senders, returning customers</dd></div>
+<div><dt>Core features</dt><dd>Sign up, delivery details, live tracking, confirmation</dd></div>
+<div><dt>My scope</dt><dd>Research, user flow, wireframes, UI, prototype</dd></div>
+</dl>
+</section>
+
+<section class="ch" id="problem" aria-labelledby="h1-problem">
+<div class="ch-head"><span class="mono">02</span><h2 id="h1-problem">Problem</h2></div>
+<p class="key">New users need a clear, reassuring way to begin using a delivery service.</p>
+<div class="cards">
+<div class="card"><h3>Trust comes first</h3><p>Handing over a package means trusting a stranger with it. The first screens have to feel safe.</p></div>
+<div class="card"><h3>Too many first steps</h3><p>Long sign-up forms and unclear next steps push new users away before their first booking.</p></div>
+<div class="card"><h3>Waiting is stressful</h3><p>Once a package is sent, people want to know where it is without having to call anyone.</p></div>
+</div>
+<p class="hmw"><span class="eyebrow">How might we</span>…help a first-time user go from opening the app to a tracked delivery, feeling confident at every step?</p>
+</section>
+
+<section class="ch" id="research" aria-labelledby="h1-research">
+<div class="ch-head"><span class="mono">03</span><h2 id="h1-research">Research</h2></div>
+<p class="key">I looked at how people send packages today, and where they give up.</p>
+<div class="cards four">
+<div class="card"><span class="num">100%</span><h3>User interviews</h3><p>People who send or receive packages</p></div>
+<div class="card"><span class="num">100%</span><h3>Survey responses</h3><p>Delivery habits and pain points</p></div>
+<div class="card"><span class="num">100%</span><h3>Delivery apps reviewed</h3><p>Onboarding, forms and tracking patterns</p></div>
+<div class="card"><span class="num">100%</span><h3>Courier conversations</h3><p>What goes wrong between pickup and drop-off</p></div>
+</div>
+</section>
+
+<section class="ch" id="insights" aria-labelledby="h1-insights">
+<div class="ch-head"><span class="mono">04</span><h2 id="h1-insights">Insights</h2></div>
+<p class="key">What we learned — and what I designed in response.</p>
+<ol class="insights">
+<li><span class="mono">01</span><div><h3>Trust is decided in seconds</h3><p>People judge a delivery service on its first screen.</p></div><div class="resp"><b>Design response</b>A warm courier-handover illustration and a clear “Fast · Safe · Reliable” promise.</div></li>
+<li><span class="mono">02</span><div><h3>Forms feel like work</h3><p>Every extra field at sign-up is a reason to leave.</p></div><div class="resp"><b>Design response</b>Three-field sign-up, with “Sign in” one tap away for returning users.</div></li>
+<li><span class="mono">03</span><div><h3>Addresses go wrong</h3><p>Unclear address entry leads to failed or late deliveries.</p></div><div class="resp"><b>Design response</b>Address fields grouped the way people write them: name, address, city, postal code.</div></li>
+<li><span class="mono">04</span><div><h3>Silence creates anxiety</h3><p>Not knowing where a package is drives calls and worry.</p></div><div class="resp"><b>Design response</b>A live tracking timeline with times for every status.</div></li>
+</ol>
+</section>
+
+<section class="ch" id="persona" aria-labelledby="h1-persona">
+<div class="ch-head"><span class="mono">05</span><h2 id="h1-persona">Persona</h2></div>
+<p class="key">Designing for Ada.</p>
+<div class="persona">
+<div class="p-id">
+<div class="p-avatar"><svg viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Avatar representing Ada, the persona"><rect width="96" height="96" fill="#DCE2EA"></rect><path d="M41 56h14v12c0 3.9-3.1 7-7 7s-7-3.1-7-7z" fill="#E8A23A"></path><path d="M14 96c0-17 13-28 27-30.5 1.5 4.3 4 6.5 7 6.5s5.5-2.2 7-6.5c14 2.5 27 13.5 27 30.5z" fill="#2F86EB"></path><ellipse cx="48" cy="42" rx="17" ry="19" fill="#FFC83D"></ellipse><path d="M30.5 40c-1.6-12.5 6.4-21 17.5-21 6.5 0 9.2 2 11.3 1.2 3.2-1.2 3.4-4 3.4-4s4.6 3.5 3.6 10.3c-.4 2.9-1.5 5.6-1.5 5.6-2.6-5.4-8.4-7.6-14.6-7.6-9.3 0-15.4 5.5-19.7 15.5z" fill="#B4532A"></path></svg></div>
+<div><div class="p-name">Ada, 29</div><div class="p-meta">Small-business owner · sends packages weekly</div></div>
+<p class="p-quote">“I just want to send it, know where it is, and know it arrived.”</p>
+</div>
+<div class="p-body">
+<div><span class="eyebrow">Goals</span><ul><li>Book a delivery in a few minutes</li><li>Know exactly where her package is</li><li>Get proof that it was delivered</li></ul></div>
+<div><span class="eyebrow">Frustrations</span><ul><li>Long sign-up forms before she can do anything</li><li>Calling couriers to ask for updates</li><li>Wrong or incomplete addresses causing delays</li></ul></div>
+<div><span class="eyebrow">Needs</span><ul><li>A quick, reassuring first run</li><li>Clear real-time tracking</li><li>A confirmation she can share with customers</li></ul></div>
+</div>
+</div>
+</section>
+
+<section class="ch" id="flow" aria-labelledby="h1-flow">
+<div class="ch-head"><span class="mono">06</span><h2 id="h1-flow">User flow</h2></div>
+<p class="key">The path that matters most: a new user’s first delivery.</p>
+<div class="flow-box">
+<p class="flow-name">First-time user sends a package</p>
+<div class="flow">
+<span class="fs start">Open app</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Welcome screen</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs dec">Have an account?</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Create account</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Set delivery details</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs">Track package</span><span class="farr" aria-hidden="true">→</span>
+<span class="fs end">Delivery completed</span>
+</div>
+<p class="alt"><span class="fs dec">Alternative path</span>Already have an account → sign in → straight to delivery details.</p>
+<div class="legend"><span>● Start / end</span><span>⬚ Decision (dashed)</span><span>□ Screen or action</span></div>
+</div>
+</section>
+
+<section class="ch" id="wireframes" aria-labelledby="h1-wireframes">
+<div class="ch-head"><span class="mono">07</span><h2 id="h1-wireframes">Wireframes</h2></div>
+<p class="key">Structure first, style later.</p>
+<p class="body">I sketched the five core screens in grayscale to test structure and order before adding colour. Each screen keeps one primary action at the bottom, within easy thumb reach.</p>
+<div class="band wire" tabindex="0" aria-label="Wireframes, scrolls horizontally">
+<div class="wf"><div class="wfp"><div class="gl" style="width: 50%"></div><div class="x" style="height: 150px">Illustration</div><div class="g" style="height: 10px; width: 80%; align-self: center"></div><div class="g" style="height: 10px; width: 60%; align-self: center"></div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div><div style="height: 36px; border: 1.5px solid #D5D5CF; border-radius: 999px"></div></div><span class="mono">Welcome</span></div>
+<div class="wf"><div class="wfp"><div class="gl" style="width: 60%"></div><div class="gl" style="width: 40%"></div><div class="x" style="height: 34px">Input</div><div class="x" style="height: 34px">Input</div><div class="x" style="height: 34px">Input</div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div></div><span class="mono">Sign up</span></div>
+<div class="wf"><div class="wfp"><div class="gl" style="width: 60%"></div><div class="gl" style="width: 40%"></div><div class="x" style="height: 34px">Input</div><div class="x" style="height: 34px">Input</div><div class="x" style="height: 34px">Input</div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div></div><span class="mono">Delivery details</span></div>
+<div class="wf"><div class="wfp"><div class="gl" style="width: 55%"></div><div class="gl" style="width: 40%"></div><div class="x" style="height: 130px">Status timeline</div><div class="g" style="height: 16px"></div><div class="g" style="height: 16px; width: 60%"></div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div></div><span class="mono">Tracking</span></div>
+<div class="wf"><div class="wfp"><div class="x" style="height: 90px; width: 90px; border-radius: 50%; align-self: center; margin-top: 30px">Success</div><div class="g" style="height: 14px; width: 70%; align-self: center"></div><div class="g" style="height: 10px; width: 85%; align-self: center"></div><div class="g" style="height: 36px; margin-top: auto; border-radius: 999px"></div><div style="height: 36px; border: 1.5px solid #D5D5CF; border-radius: 999px"></div></div><span class="mono">Confirmation</span></div>
+</div>
+</section>
+
+<section class="ch" id="system" aria-labelledby="h1-system">
+<div class="ch-head"><span class="mono">08</span><h2 id="h1-system">Design system</h2></div>
+<p class="key">A small system that keeps every screen consistent.</p>
+<p class="body">Deep teal for actions and progress, navy for headings, and soft mint surfaces. A friendly illustration style keeps it human. Every text pair meets WCAG AA.</p>
+<div class="sw-grid">
+<div class="sw"><div class="sw-c" style="background: #0B7A7B; color: #FFFFFF">#0B7A7B</div><p>Deep teal</p></div>
+<div class="sw"><div class="sw-c" style="background: #1E1B8E; color: #FFFFFF">#1E1B8E</div><p>Navy</p></div>
+<div class="sw"><div class="sw-c" style="background: #E4F3F2; color: #111318">#E4F3F2</div><p>Mint</p></div>
+<div class="sw"><div class="sw-c" style="background: #111827; color: #FFFFFF">#111827</div><p>Ink</p></div>
+</div>
+<div class="ds-row">
+<div class="ds-box">
+<span class="eyebrow">Type · Bold italic display + clean sans</span>
+<div class="tr" style="margin-top: 12px"><span style="font-size: 28px; font-weight: 700; font-style: italic; letter-spacing: -.02em; color: var(--brand-ink)">Delivery Hub</span><span class="mono">Display</span></div>
+<div class="tr"><span style="font-size: 20px; font-weight: 600">Track your package</span><span class="mono">20 / Semibold</span></div>
+<div class="tr"><span style="font-size: 16px">Real-time updates, right on your phone.</span><span class="mono">16 / Regular</span></div>
+<div class="tr"><span style="font-size: 13px; color: var(--muted)">Out for delivery · 11:30 AM</span><span class="mono">13 / Regular</span></div>
+</div>
+<div class="ds-box">
+<span class="eyebrow">Components</span>
+<div class="comps"><span class="b1">Let’s get started</span><span class="b2">I already have an account</span><span class="b3">Out for delivery</span></div>
+<div class="inp">Email address</div>
+<p class="note">8-pt spacing · full-width buttons · 44px minimum touch targets · WCAG AA contrast</p>
+</div>
+</div>
+</section>
+
+<section class="ch" id="ui" aria-labelledby="h1-ui">
+<div class="ch-head"><span class="mono">09</span><h2 id="h1-ui">Final UI</h2></div>
+<p class="key">Friendly, calm and one tap from the next step.</p>
+<figure class="board"><img src="assets/img/delivery-hub-board.webp" alt="Delivery Hub case study board: project overview, problem, goal, design approach, the five-step user flow and the five key screens"><figcaption>The full case study board — overview, user flow and key screens.</figcaption></figure>
+<div class="band ui" tabindex="0" aria-label="Final screens, scrolls horizontally">
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Delivery hub</span><span class="ph-dot"></span></div>
+<div class="ph-hero"><strong>Fast · Safe · Reliable</strong><span>Send and receive packages with couriers you can trust.</span></div>
+<div class="ph-ctas">
+<div class="ph-cta">Let’s get started</div>
+<div class="ph-cta2">I already have an account</div>
+<div class="ph-foot">By continuing you agree to the <b>terms &amp; privacy policy</b></div>
+</div>
+</div>
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Create your account</span><span class="ph-dot"></span></div>
+<div class="ph-hero"><strong>Get started in seconds</strong><span>Just three fields to begin.</span></div>
+<div class="ph-fields"><div class="ph-search">Full name</div><div class="ph-search">Email address</div><div class="ph-search">Password</div></div>
+<div class="ph-ctas">
+<div class="ph-cta">Sign up</div>
+<div class="ph-foot">Already have an account? <b>Sign in</b></div>
+</div>
+</div>
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Delivery details</span><span class="ph-dot"></span></div>
+<div class="ph-hero"><strong>Where are we delivering to?</strong><span>Add the recipient and address.</span></div>
+<div class="ph-fields"><div class="ph-search">Full name</div><div class="ph-search">Address</div><div class="ph-search">City</div><div class="ph-search">Postal code</div></div>
+<div class="ph-ctas">
+<div class="ph-cta">Continue</div>
+</div>
+</div>
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Track your package</span><span class="ph-dot"></span></div>
+<div class="ph-rows">
+<div class="ph-row"><span class="ph-st done"></span><span class="ph-tx"><b>Order confirmed</b><small>10:24 AM</small></span></div>
+<div class="ph-row"><span class="ph-st now"></span><span class="ph-tx"><b>Out for delivery</b><small>11:30 AM</small></span><span class="ph-tag">Now</span></div>
+<div class="ph-row"><span class="ph-st"></span><span class="ph-tx"><b>Arriving soon</b><small>12:15 PM</small></span></div>
+<div class="ph-row"><span class="ph-st"></span><span class="ph-tx"><b>Delivered</b><small>Pending</small></span></div>
+</div>
+<div class="ph-ctas">
+<div class="ph-cta">Contact courier</div>
+</div>
+</div>
+<div class="phone">
+<div class="ph-top"><span class="ph-title">Confirmation</span><span class="ph-dot"></span></div>
+<div class="ph-hero big"><span class="ph-check" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5l4 4 8-9"></path></svg></span><strong>Delivery completed!</strong><span>Your package has been delivered successfully.</span></div>
+<div class="ph-ctas">
+<div class="ph-cta">View details</div>
+<div class="ph-cta2">Back to home</div>
+</div>
+</div>
+</div>
+<p class="swipe" aria-hidden="true">Swipe for more screens →</p>
+<div class="ui-cap five">
+<div><b>1. Welcome</b><span>One primary and one secondary action, with terms and privacy one tap away.</span></div>
+<div><b>2. Sign up / Sign in</b><span>A short form and a visible path for returning users.</span></div>
+<div><b>3. Delivery details</b><span>Fields grouped the way people write an address.</span></div>
+<div><b>4. Tracking</b><span>A timeline of real-time updates, right on your phone.</span></div>
+<div><b>5. Confirmation</b><span>A clear success state with two next steps.</span></div>
+</div>
+</section>
+
+<section class="ch" id="prototype" aria-labelledby="h1-prototype">
+<div class="ch-head"><span class="mono">10</span><h2 id="h1-prototype">Prototype</h2></div>
+<div class="proto">
+<div>
+<p class="eyebrow" style="color: #A9ADB5">Interactive prototype</p>
+<p style="font-size: 26px; line-height: 1.2; letter-spacing: -.02em; font-weight: 600; color: #fff; margin: 12px 0 0">From first open to a delivered package.</p>
+<p>A clickable walk-through of all five screens — welcome, sign up, delivery details, live tracking and the confirmation state.</p>
+<dl class="proto-meta">
+<div><dt>Screens</dt><dd>5 core screens</dd></div>
+<div><dt>Built in</dt><dd>Figma</dd></div>
+<div><dt>Transitions</dt><dd>[Smart animate]</dd></div>
+<div><dt>Device</dt><dd>[iPhone 14 · 390×844]</dd></div>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a class="proto-btn" href="https://www.figma.com/design/bY8rDcsV9pJSOj9oXr7mFo/Delivery-Hub?node-id=1-25788&amp;t=C9oOnaIrOfVP6ev1-1" target="_blank" rel="noopener">Open in Figma ↗</a>
+<a class="proto-btn ghost" href="https://www.figma.com/design/bY8rDcsV9pJSOj9oXr7mFo/Delivery-Hub?node-id=1-283&amp;t=qQzP1qkvKwxoEZ7O-1" target="_blank" rel="noopener">View prototype ↗</a>
+</div>
+</div>
+<a class="play" href="https://www.figma.com/design/bY8rDcsV9pJSOj9oXr7mFo/Delivery-Hub?node-id=1-283&amp;t=qQzP1qkvKwxoEZ7O-1" target="_blank" rel="noopener"><span><span class="play-i" aria-hidden="true">▶</span>Open the interactive prototype in Figma ↗<span class="play-steps"><span>Open app</span><span>Welcome screen</span><span>Have an account?</span><span>Create account</span><span>Set delivery details</span><span>Track package</span><span>Delivery completed</span></span></span></a>
+</div>
+</section>
+
+<section class="ch" id="results" aria-labelledby="h1-results">
+<div class="ch-head"><span class="mono">11</span><h2 id="h1-results">Results</h2></div>
+<p class="key">How success will be measured.</p>
+<div class="res" style="grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))">
+<div><span class="num">100%</span><b class="mt">Onboarding completion</b><p>Share of new users who reach delivery details after the welcome screen</p><span class="tgt">Target</span></div>
+<div><span class="num">100%</span><b class="mt">Sign-up drop-off</b><p>Where users leave the account form, field by field</p><span class="tgt">Target</span></div>
+<div><span class="num">100%</span><b class="mt">Time to first booking</b><p>Minutes from first open to a confirmed delivery</p><span class="tgt">Target</span></div>
+<div><span class="num">100%</span><b class="mt">Tracking engagement</b><p>How often users open tracking while a package is on its way</p><span class="tgt">Target</span></div>
+</div>
+<p class="concept"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2a5 5 0 0 0-3 9v2h6v-2a5 5 0 0 0-3-9zM7 16h4"></path></svg>Concept case study — outcomes to be validated through user testing.</p>
+</section>
+
+<section class="ch" id="lessons" aria-labelledby="h1-lessons">
+<div class="ch-head"><span class="mono">12</span><h2 id="h1-lessons">Lessons learned</h2></div>
+<p class="key">What I’d carry into the next project.</p>
+<ul class="lessons">
+<li><b>Trust is a design problem</b><span>Tone, illustration and clear terms do as much for confidence as any feature.</span></li>
+<li><b>Ask only for what you need</b><span>Cutting sign-up to three fields kept the focus on the first delivery, not the form.</span></li>
+<li><b>Design the waiting, not just the booking</b><span>Tracking is where people spend the most time with a delivery app, so it deserved the same care.</span></li>
+</ul>
+</section>
+
+<a class="next" href="index.html#work"><span><span class="eyebrow">Thanks for reading</span><span class="big">Back to all work</span></span><span class="circ" aria-hidden="true">→</span></a>
+</main>
+</div>
+</div>
+<script src="assets/js/case-study.js"></script>
+</body>
+</html>
