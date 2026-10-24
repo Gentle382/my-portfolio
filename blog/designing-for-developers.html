@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Designing for Developers</title>
+<meta name="description" content="What changes when the designer can also build the front end, and the handoff habits that save rework on both sides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../#top" aria-label="Wisdom's Smartfolio, home"><span class="brand-mark">WS</span><span class="t">Wisdom's <span class="s">Smartfolio</span></span></a>
+    <a class="back" href="../#blog"><span aria-hidden="true">←</span> All articles</a>
+  </div>
+</header>
+
+<main>
+  <section class="post-head">
+    <div class="wrap">
+      <div class="inner">
+        <div class="crumbs"><a href="../#blog">Blog</a><span aria-hidden="true">/</span><span class="cat">Development</span></div>
+        <h1>Designing for Developers: Specs They Trust</h1>
+        <p class="dek">I design products and I also write the code for them. Doing both changed how I hand off designs, and these are the habits that came out of it.</p>
+        <div class="byline">
+          <img src="../assets/img/portrait.jpg" alt="" width="44" height="44">
+          <div><b>Chibueze Wisdom Ugochukwu</b>UI/UX &amp; Product Designer</div>
+          <span class="meta">4 MIN READ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="cover">
+      <img src="../assets/img/delivery-hub-board.webp" alt="Delivery Hub app: welcome screen on a phone beside the case study title">
+      <figcaption>Delivery Hub: five onboarding screens, each with one primary action at the bottom.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="On this page">
+      <p>ON THIS PAGE</p>
+      <ol>
+        <li><a href="#gap">Where handoffs go wrong</a></li>
+        <li><a href="#components">Think in components</a></li>
+        <li><a href="#states">Design every state</a></li>
+        <li><a href="#rules">Write the rules down</a></li>
+        <li><a href="#checklist">My handoff checklist</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <p>My background is in engineering. Before I designed interfaces, I built them with HTML, CSS, JavaScript and React, and wired them to Node.js APIs. So when I hand a design to a developer, I know what questions they will ask, because I have been the one asking them.</p>
+      <p>A design file can look finished and still leave a developer guessing. Guessing is where the product starts to drift away from the design. This article is about closing that gap.</p>
+
+      <h2 id="gap">Where handoffs go wrong</h2>
+      <p>Most handoff problems are not about pixels. They are about information the design never contained:</p>
+      <ul>
+        <li>What happens when the list is empty?</li>
+        <li>What does the button look like while the request is loading?</li>
+        <li>Is this 16px or 15px, and is that difference on purpose?</li>
+        <li>What happens to this layout on a smaller phone?</li>
+      </ul>
+      <p>If the design doesn’t answer, the developer makes a reasonable decision under deadline pressure. Ten reasonable decisions later, the shipped product feels different from the prototype, and nobody quite knows why.</p>
+      <blockquote>A spec developers trust is one where they never have to guess, and never have to ask the same question twice.</blockquote>
+
+      <h2 id="components">Think in components, not pages</h2>
+      <p>Developers build components: a button, an input, a card, a status row. If I design pages, they have to break my pages back down into components themselves. If I design components first, we are speaking the same language from the start.</p>
+      <p>On <strong>Delivery Hub</strong>, the whole onboarding flow (welcome, sign up, delivery details, tracking and confirmation) comes from a small set of parts:</p>
+      <div class="specs">
+        <div><b>Full-width</b><span>Primary button, e.g. “Let’s get started”</span></div>
+        <div><b>Secondary</b><span>“I already have an account”</span></div>
+        <div><b>Input</b><span>Label, field, error message</span></div>
+        <div><b>Status row</b><span>“Out for delivery · 11:30 AM”</span></div>
+      </div>
+      <p>The same parts appear on every screen. A developer who builds them once has most of the flow done.</p>
+
+      <h2 id="states">Design every state</h2>
+      <p>A screen is not one picture. It is a set of states, and the in-between ones are what developers most often have to invent. For each component I design:</p>
+      <div class="pairs">
+        <div class="pair"><div><span class="k">THE HAPPY PATH</span>The sign-up form, filled in correctly.</div><div><span class="k">WHAT ALSO GETS DESIGNED</span>Empty, focused, invalid email, weak password, and submitting.</div></div>
+        <div class="pair"><div><span class="k">THE HAPPY PATH</span>The tracking timeline mid-delivery.</div><div><span class="k">WHAT ALSO GETS DESIGNED</span>Order confirmed, out for delivery, arriving soon and delivered, each with its time, plus the pending state.</div></div>
+        <div class="pair"><div><span class="k">THE HAPPY PATH</span>The delivery completed screen.</div><div><span class="k">WHAT ALSO GETS DESIGNED</span>Its two next steps: view details, or go back home.</div></div>
+      </div>
+      <p>Insights from research shaped some of these directly. People told us that silence while a package is moving creates anxiety, so the tracking timeline shows a time for every status. That is a design decision, but it is also a data requirement, and the developer needs to know about it on day one.</p>
+
+      <h2 id="rules">Write the rules down</h2>
+      <p>Redlining every screen is slow and goes out of date quickly. Writing down the few rules that produce every screen is faster and lasts longer. For Delivery Hub those rules were:</p>
+      <ul>
+        <li><strong>8-point spacing.</strong> Every gap is a multiple of 8, so there are no odd values to question.</li>
+        <li><strong>Full-width buttons</strong>, with the primary action at the bottom of the screen, within easy thumb reach.</li>
+        <li><strong>44px minimum touch targets</strong> for anything tappable.</li>
+        <li><strong>WCAG AA contrast</strong> for every text and background pair.</li>
+        <li><strong>A named device frame</strong> (iPhone 14, 390×844) so everyone checks the same size first.</li>
+      </ul>
+      <p>When a developer meets a situation I didn’t draw, the rules usually answer it. That is what makes a spec trustworthy: it still works when it runs out of pictures.</p>
+
+      <h2 id="checklist">My handoff checklist</h2>
+      <ol class="steps">
+        <li><div><b>Components first.</b>Every reusable part is a named component with its variants.</div></li>
+        <li><div><b>States for everything.</b>Empty, loading, error, success and disabled, wherever they can happen.</div></li>
+        <li><div><b>Rules, not redlines.</b>Spacing scale, type scale, colours and touch targets written down in one place.</div></li>
+        <li><div><b>A clickable prototype.</b>Built in Figma with realistic content, so the flow and transitions are clear.</div></li>
+        <li><div><b>Stay in the room.</b>I review the build with the developer, and where it helps I prototype tricky parts in code myself.</div></li>
+      </ol>
+      <div class="note"><p class="k">THE SHORT VERSION</p><p>Design in components and states, write down the rules that produce every screen, and stay involved until it ships. Developers stop guessing, and the product that ships matches the one that was designed.</p></div>
+
+      <a class="related" href="../delivery-hub.html">
+        <img src="../assets/img/delivery-hub-board.webp" alt="">
+        <span><span class="k">RELATED CASE STUDY</span><b>Delivery Hub</b></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </article>
+  </div>
+
+  <section class="more">
+    <div class="wrap">
+      <h2>More articles</h2>
+      <div class="more-grid">
+        <a class="card" href="design-system-first.html"><span class="cat">Design</span><h3>Building a Design System Before the Screens</h3><p>Why I set up tokens, components and states first on Dominion City Kubwa.</p><span class="rt">4 MIN READ</span></a>
+        <a class="card" href="ux-research-small-budget.html"><span class="cat">UX Research</span><h3>UX Research on a Small Budget</h3><p>How member and staff interviews, one persona and mapped journeys gave the Dominion City app a clear direction.</p><span class="rt">4 MIN READ</span></a>
+      </div>
+      <div class="cta">
+        <div><h3>Need a designer who can also build it?</h3><p>Let’s talk about your product.</p></div>
+        <a class="btn" href="../#contact">Let’s work together <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Chibueze Wisdom Ugochukwu · UI/UX &amp; Product Designer</span>
+    <a href="../#blog">Back to all articles ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  if(!links.length||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)});
+})();
+</script>
+</body>
+</html>

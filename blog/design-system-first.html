@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Building a Design System Before the Screens</title>
+<meta name="description" content="Why I set up tokens, components and states first on the Dominion City Kubwa app, and how it kept five journeys consistent and easy to hand off.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../#top" aria-label="Wisdom's Smartfolio, home"><span class="brand-mark">WS</span><span class="t">Wisdom's <span class="s">Smartfolio</span></span></a>
+    <a class="back" href="../#blog"><span aria-hidden="true">←</span> All articles</a>
+  </div>
+</header>
+
+<main>
+  <section class="post-head">
+    <div class="wrap">
+      <div class="inner">
+        <div class="crumbs"><a href="../#blog">Blog</a><span aria-hidden="true">/</span><span class="cat">Design</span></div>
+        <h1>Building a Design System Before the Screens</h1>
+        <p class="dek">On the Dominion City Kubwa app I set up colours, type, spacing and components before designing a single final screen. Here is why, and what it bought the project.</p>
+        <div class="byline">
+          <img src="../assets/img/portrait.jpg" alt="" width="44" height="44">
+          <div><b>Chibueze Wisdom Ugochukwu</b>UI/UX &amp; Product Designer</div>
+          <span class="meta">4 MIN READ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="cover">
+      <img src="../assets/img/dominion-cover.jpg" alt="Dominion City Kubwa app: onboarding screen and video messages list on two phones">
+      <figcaption>Onboarding and the video messages library, both built from the same small set of components.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="On this page">
+      <p>ON THIS PAGE</p>
+      <ol>
+        <li><a href="#why">Why screens-first breaks down</a></li>
+        <li><a href="#what">What went into the system</a></li>
+        <li><a href="#states">Designing the states</a></li>
+        <li><a href="#payoff">Where it paid off</a></li>
+        <li><a href="#keep">What I’d keep doing</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <p>Dominion City Kubwa wanted one app for church life: this week’s events, communities, video messages, giving and an account. That is five separate journeys, used by two very different people. A regular member wants to get in and out quickly. A first-time visitor needs to be welcomed and guided.</p>
+      <p>With that many journeys, the risk is that each one ends up looking slightly different. A button here is 40px tall, a card there has a different corner radius, a grey label is a slightly different grey. None of it is dramatic on its own. Together it makes an app feel unfinished, and it makes the developers’ job harder.</p>
+
+      <h2 id="why">Why screens-first breaks down</h2>
+      <p>The usual way to start is to open Figma and design the home screen, because that is the most exciting one. Then the media screen, then giving. Every decision gets made in the moment, inside one screen, and then copied or re-made in the next.</p>
+      <p>By the fifth screen you have made the same decision five times, and probably not the same way each time. When a developer asks “which blue is the right blue?”, there is no single answer.</p>
+      <blockquote>Every decision I make once in the system is a decision I don’t have to make again on every screen.</blockquote>
+      <p>So after research and grayscale wireframes, and before any high-fidelity screens, I stopped and built a small system.</p>
+
+      <h2 id="what">What went into the system</h2>
+      <p>I kept it deliberately small. A church app does not need a hundred tokens. It needs a handful that are chosen well and used everywhere.</p>
+      <h3>Colour</h3>
+      <p>A confident royal blue drawn from the church’s identity, a deep navy for headings and pressed states, a light sky tint for surfaces, and an ink colour for body text. I checked every text and background pair against WCAG AA before any screen used it.</p>
+      <div class="specs">
+        <div><b>#0A3D91</b><span>Royal blue · actions</span></div>
+        <div><b>#052D69</b><span>Deep navy · headings</span></div>
+        <div><b>#E8EEF8</b><span>Sky · surfaces</span></div>
+        <div><b>#111827</b><span>Ink · body text</span></div>
+      </div>
+      <h3>Type</h3>
+      <p>One family, Poppins, in four sizes: a 28px semibold heading, a 20px semibold title, 16px body text and 13px captions. Four sizes is enough for a mobile app and few enough that nobody has to guess.</p>
+      <h3>Spacing, shape and touch</h3>
+      <p>An 8-point spacing scale, a 12px corner radius on cards and buttons, and a 44px minimum touch target for anything tappable. That last one matters for an app people open on a Sunday morning, often one-handed, sometimes in a hurry.</p>
+      <h3>Components</h3>
+      <p>The core set was small: a primary button (“Give now”), a secondary button (“Join community”), a “Live” badge, a search field for messages, and photo-led cards for events and sermons. Every final screen is built from these.</p>
+
+      <h2 id="states">Designing the states, not just the look</h2>
+      <p>A component is not finished when it looks right. It is finished when every state it can be in is designed. For the giving flow that meant:</p>
+      <ul>
+        <li>The amount field empty, filled and invalid.</li>
+        <li>The giving type (tithe, offering, building project) selected and unselected.</li>
+        <li>The “Give now” button enabled, disabled and loading.</li>
+        <li>A clear confirmation screen, and the giving history one tap away.</li>
+      </ul>
+      <p>Research had told us that giving had to feel <strong>safe and quick</strong>, and that trust mattered more than extra features. Designing these states up front is how that insight turned into something concrete: two steps from amount to confirmation, with no moment where the person wonders whether it worked.</p>
+
+      <h2 id="payoff">Where it paid off</h2>
+      <div class="pairs">
+        <div class="pair"><div><span class="k">WITHOUT A SYSTEM</span>Each journey designed on its own, with small differences everywhere.</div><div><span class="k">WITH THE SYSTEM</span>Events, communities, media, giving and account all look like one app.</div></div>
+        <div class="pair"><div><span class="k">WITHOUT A SYSTEM</span>Wireframe feedback means redrawing many screens.</div><div><span class="k">WITH THE SYSTEM</span>When testers struggled to find giving, moving it to the tab bar was one change to one component.</div></div>
+        <div class="pair"><div><span class="k">WITHOUT A SYSTEM</span>Developers measure every screen and ask which value is correct.</div><div><span class="k">WITH THE SYSTEM</span>Developers build each component once and reuse it.</div></div>
+      </div>
+      <p>The results backed it up. In usability testing, people completed every task, and every test of online giving went through successfully. Members began onboarding onto the app in the first two weeks. A system doesn’t create those results by itself, but it removes a whole category of small confusions that get in the way of them.</p>
+
+      <h2 id="keep">What I’d keep doing</h2>
+      <ol class="steps">
+        <li><div><b>Build the system after the wireframes, not before.</b>Grayscale wireframes settle the structure. The system should serve that structure, not decide it.</div></li>
+        <li><div><b>Keep it small.</b>Four colours, four type sizes and a short component list were enough. Every extra token is one more thing to keep consistent.</div></li>
+        <li><div><b>Check accessibility at the token level.</b>If every colour pair passes AA in the system, every screen built from it starts in a good place.</div></li>
+        <li><div><b>Design slots for content that changes.</b>Announcements and sermons change every week, so I designed cards that staff can update without breaking the layout.</div></li>
+      </ol>
+      <div class="note"><p class="k">THE SHORT VERSION</p><p>Decide colours, type, spacing and components once. Design every state they can be in. Then build the screens. It feels slower on day one and saves time on every day after.</p></div>
+
+      <a class="related" href="../dominion-city-kubwa.html">
+        <img src="../assets/img/dominion-cover.jpg" alt="">
+        <span><span class="k">RELATED CASE STUDY</span><b>Dominion City Kubwa</b></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </article>
+  </div>
+
+  <section class="more">
+    <div class="wrap">
+      <h2>More articles</h2>
+      <div class="more-grid">
+        <a class="card" href="designing-for-developers.html"><span class="cat">Development</span><h3>Designing for Developers: Specs They Trust</h3><p>What changes when the designer can also build the front end, and the handoff habits that save rework.</p><span class="rt">4 MIN READ</span></a>
+        <a class="card" href="ux-research-small-budget.html"><span class="cat">UX Research</span><h3>UX Research on a Small Budget</h3><p>How member and staff interviews, one persona and mapped journeys gave the Dominion City app a clear direction.</p><span class="rt">4 MIN READ</span></a>
+      </div>
+      <div class="cta">
+        <div><h3>Have a product that needs this kind of thinking?</h3><p>I design it, and I can build it.</p></div>
+        <a class="btn" href="../#contact">Let’s work together <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Chibueze Wisdom Ugochukwu · UI/UX &amp; Product Designer</span>
+    <a href="../#blog">Back to all articles ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  if(!links.length||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)});
+})();
+</script>
+</body>
+</html>
